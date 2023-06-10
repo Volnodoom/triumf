@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="normalize.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <title>Таблица цветов</title>
+</head>
+<body>
+  <div class="visually-hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <symbol id="icon-delete" width="11" height="13" viewBox="0 0 11 13">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11 1H0L1.26923 13H9.73077L11 1ZM9.88865 2H1.11135L2.16904 12H8.83096L9.88865 2Z" fill="currentColor"/>
+        <rect width="11" height="2" fill="currentColor"/>
+      </symbol>
+
+      <symbol id="icon-pen" width="15" height="16" viewBox="0 0 15 16" fill="none">
+        <path d="M10.8701 1.60447C11.0429 1.41283 11.2481 1.26081 11.4739 1.1571C11.6997 1.05338 11.9417 1 12.1861 1C12.4306 1 12.6726 1.05338 12.8984 1.1571C13.1242 1.26081 13.3293 1.41283 13.5022 1.60447C13.675 1.79611 13.8121 2.02362 13.9056 2.27401C13.9991 2.5244 14.0473 2.79277 14.0473 3.06379C14.0473 3.33481 13.9991 3.60317 13.9056 3.85356C13.8121 4.10395 13.675 4.33146 13.5022 4.5231L4.61905 14.3735L1 15.468L1.98701 11.4549L10.8701 1.60447Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+
+      <symbol id="icon-save" width="15" height="15" viewBox="0 0 15 15">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M14 4.49323V14H1V1H10.1985L14 4.49323ZM10.5882 0L15 4.05405V15H0V0H10.5882Z" fill="currentColor"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11 10H4V14H11V10ZM3 9V15H12V9H3Z" fill="currentColor"/>
+      </symbol>  
+    </svg>
+  </div>
+
+  <table class="content">
+    <caption class="content__caption">
+      Таблица цветов 
+      <button class="button-transparent content__caption__save-button button--save" type="button" aria-label="Сохранить данные.">
+        <svg width="15" height="15" aria-hidden="true" focusable="false">
+          <use href="#icon-save"/>
+        </svg>
+      </button>
+      <button class="button-transparent content__caption__close-button button--close" type="button" aria-label="Закрыть таблицу."></button>
+    </caption>
+
+    <thead class="content__head">
+      <tr class="content__row row-head">
+        <td class="content__cell">Цвет</td>
+        <td class="content__cell">Название</td>
+        <td class="content__cell">Тип</td>
+        <td class="content__cell">Код</td>
+        <td class="content__cell">Изменить</td>
+        <td class="content__cell">Удалить</td>
+      </tr>
+    </thead>
+
+    <tbody class="content__body">
+      <tr class="content__row">
+        <td class="content__cell">
+          <div class="cell-rep-color" data-repcolor="#86EAE9"></div>
+        </td>
+        <td class="content__cell cell-split">Лавандовый пунш</td>
+        <td class="content__cell">base</td>
+        <td class="content__cell">#86EAE9</td>
+        <td class="content__cell">
+          <button type="button" class="button-transparent button--extended button--change" aria-label="Изменить данные.">
+            <symbol>
+              <svg width="15" height="16" viewBox="0 0 15 16" aria-hidden="true" focusable="false">
+                <use href="#icon-pen" />
+              </svg>
+            </symbol>
+          </button>
+        </td>
+        <td class="content__cell">
+          <button type="button" class="button-transparent button--extended button--delete" aria-label="Удалить данные.">
+            <symbol>
+              <svg width="11" height="13" viewBox="0 0 11 13" aria-hidden="true" focusable="false">
+                <use href="#icon-delete" />
+              </svg>
+            </symbol>
+          </button>
+        </td>
+      </tr>
+
+      <tr class="content__row-add">
+        <td class="content__row-add__cell"></td>
+        <td class="content__row-add__cell"></td>
+        <td class="content__row-add__button-cell">
+          <button class="content__add-position" type="button">Добавить цвет</button>
+        </td>
+        <td class="content__row-add__cell"></td>
+        <td class="content__row-add__cell"></td>
+        <td class="content__row-add__cell"></td>
+      </tr>
+    </tbody>
+
+  </table>
+  <div class="picker">
+
+  </div>
+  
+</body>
+</html>
