@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="normalize.css" rel="stylesheet">
+  <link href="colorjoe/colorjoe.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+  <script src="colorjoe/colorjoe.min.js"></script>
   <title>Таблица цветов</title>
 </head>
 <body>
@@ -22,13 +24,12 @@
       <symbol id="icon-save" width="15" height="15" viewBox="0 0 15 15">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M14 4.49323V14H1V1H10.1985L14 4.49323ZM10.5882 0L15 4.05405V15H0V0H10.5882Z" fill="currentColor"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M11 10H4V14H11V10ZM3 9V15H12V9H3Z" fill="currentColor"/>
-      </symbol>  
-    </svg>
+      </symbol>  </svg>
   </div>
 
   <table class="content">
     <caption class="content__caption">
-      Таблица цветов 
+      Таблица цветов
       <button class="button-transparent content__caption__save-button button--save" type="button" aria-label="Сохранить данные.">
         <svg width="15" height="15" aria-hidden="true" focusable="false">
           <use href="#icon-save"/>
@@ -36,7 +37,6 @@
       </button>
       <button class="button-transparent content__caption__close-button button--close" type="button" aria-label="Закрыть таблицу."></button>
     </caption>
-
     <thead class="content__head">
       <tr class="content__row row-head">
         <td class="content__cell">Цвет</td>
@@ -47,7 +47,6 @@
         <td class="content__cell">Удалить</td>
       </tr>
     </thead>
-
     <tbody class="content__body">
       <tr class="content__row">
         <td class="content__cell">
@@ -75,7 +74,6 @@
           </button>
         </td>
       </tr>
-
       <tr class="content__row-add">
         <td class="content__row-add__cell"></td>
         <td class="content__row-add__cell"></td>
@@ -87,11 +85,86 @@
         <td class="content__row-add__cell"></td>
       </tr>
     </tbody>
-
   </table>
-  <div class="picker">
 
+  <div class="picker">
+    <span class="picker__title">Добавление цвета</span>
+    <form class="picker__form form">
+      <div class="input-wrapper">
+        <input class="form__name-input" type="text" name="color-name" id="color-name" placeholder="Введите название">
+        <label class="form__name-label" for="color-name">Название цвета</label>
+      </div>
+
+      <!--  input-wrapper__list--active for list activation-->
+      <div class="input-wrapper input-wrapper__list">
+        <input class="form__type-input" type="text" name="color-type" id="color-type" value="Main">
+        <label class="form__type-label" for="color-type">Выберите тип</label>
+
+        <ul class="form__type-list">
+          <li class="form__type-item">Main</li>
+          <li class="form__type-item">Primary</li>
+          <li class="form__type-item">Secondary</li>
+          <li class="form__type-item">Base</li>
+        </ul>
+      </div>
+
+      <div class="form__picker-wrapper color-chooser">
+        <div class="color-chooser__engin"></div>
+
+        <div class="color-chooser__basics">
+          <!--  format-list--active for list activation-->
+          <div class="format-input-wrapper format-list">
+            <input class="color-chooser__format-input" type="text" aria-label="Формат цвета" name="color-format" id="color-format" value="HEX">
+
+            <ul class="color-chooser__format-list">
+              <li class="color-chooser__format-item">HEX</li>
+              <li class="color-chooser__format-item">RGB</li>
+              <li class="color-chooser__format-item">sRGB</li>
+            </ul>
+          </div>
+
+          <input class="color-chooser__value-color-input" type="text" name="color-value" id="color-value" value="ffffff">
+          <label class="color-chooser__value-color-label" for="color-value">Color</label>
+          <div class="color-chooser__current-color"></div>
+        </div>
+
+        <ul class="color-chooser__details details">
+          <li class="details__item">
+            <label class="details__item-label" for="basic-value-one">R</label>
+            <input class="details__item-input" type="text" name="basic-value-one" id="basic-value-one" value="0.01">
+          </li>
+          <li class="details__item">
+            <label class="details__item-label" for="basic-value-two">G</label>
+            <input class="details__item-input" type="text" name="basic-value-two" id="basic-value-two" value="0.01">
+          </li>
+          <li class="details__item">
+            <label class="details__item-label" for="basic-value-three">B</label>
+            <input class="details__item-input" type="text" name="basic-value-three" id="basic-value-three" value="0.01">
+          </li>
+        </ul>
+
+        <ul class="color-chooser__examples examples">
+          <li class="examples__item examples__item--one"></li>
+          <li class="examples__item examples__item--two"></li>
+          <li class="examples__item examples__item--three"></li>
+          <li class="examples__item examples__item--four"></li>
+          <li class="examples__item examples__item--five"></li>
+          <li class="examples__item examples__item--six"></li>
+          <li class="examples__item examples__item--seven"></li>
+          <li class="examples__item examples__item--eight"></li>
+          <li class="examples__item examples__item--nine"></li>
+          <li class="examples__item examples__item--ten"></li>
+          <li class="examples__item examples__item--eleven"></li>
+          <li class="examples__item examples__item--twelve"></li>
+          <li class="examples__item examples__item--thirteen"></li>
+        </ul>
+      </div>
+
+      <button class="form__submit" type="submit">Добавить</button>
+    </form>
   </div>
-  
+  <script src="./js/main.js"></script>
 </body>
 </html>
+
+
